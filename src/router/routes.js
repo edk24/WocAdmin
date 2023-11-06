@@ -1,8 +1,7 @@
 import Layout from '@/components/layout/index.vue'
 import PageNotFound from '@/components/error/404.vue'
-import { RouterRecord } from './type'
 
-const routes: Array<RouterRecord> = [
+const routes = [
     {
         hidden: true,
         path: '/login',

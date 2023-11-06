@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 // 状态
 export function useStatusTypeDict() {
@@ -13,5 +13,5 @@ export function useStatusTypeDict() {
             value: 'disable',
             color: 'error'
         },
-    ])
+    ]);
 }

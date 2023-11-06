@@ -4,7 +4,7 @@ import routes from './routes'
 // 创建路由
 const router = createRouter({
     history: createWebHashHistory(''),
-    routes: routes as any,
+    routes: routes,
 })
 
 // 重置路由

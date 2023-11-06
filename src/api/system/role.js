@@ -6,10 +6,7 @@ import request from "@/utils/request"
  * @param data 
  * @returns 
  */
-export const roleLists = (data: {
-    page?: number,
-    limit?: number
-}) => {
+export const roleLists = (data) => {
     return request.get({
         url: '/admin/sys_role/index',
         data
@@ -22,11 +19,7 @@ export const roleLists = (data: {
  * @param data 
  * @returns 
  */
-export const createRole = (data: {
-    role_key: string,
-    role_name: string,
-    data_scope: number
-}) => {
+export const createRole = (data) => {
     return request.post({
         url: '/admin/sys_role/create',
         data
@@ -38,12 +31,7 @@ export const createRole = (data: {
  * @param data 
  * @returns 
  */
-export const updateRole = (data: {
-    role_id: number,
-    role_key: string,
-    role_name: string,
-    data_scope: number
-}) => {
+export const updateRole = (data) => {
     return request.post({
         url: '/admin/sys_role/update',
         data
@@ -57,7 +45,7 @@ export const updateRole = (data: {
  * @param roleId 
  * @returns 
  */
-export const deleteRoleById = (roleId: number) => {
+export const deleteRoleById = (roleId) => {
     return request.post({
         url: '/admin/sys_role/delete',
         data: {
@@ -73,7 +61,7 @@ export const deleteRoleById = (roleId: number) => {
  * @param roleId 
  * @returns 
  */
-export const getRoleById = (roleId: number) => {
+export const getRoleById = (roleId) => {
     return request.get({
         url: '/admin/sys_role/get',
         data: {

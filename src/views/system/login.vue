@@ -32,7 +32,7 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { ref } from 'vue'
 import { User, Lock } from '@element-plus/icons'
 import useUserStore from '@/stores/modules/user';

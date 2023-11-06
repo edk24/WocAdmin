@@ -7,10 +7,7 @@ import request from "@/utils/request"
  * @param data 
  * @returns 
  */
-export const userLists = (data: {
-    page?: number,
-    limit?: number
-}) => {
+export const userLists = (data) => {
     return request.get({
         url: '/admin/sys_user/lists',
         data
@@ -23,7 +20,7 @@ export const userLists = (data: {
  * @param data 
  * @returns 
  */
-export const createUser = (data: any) => {
+export const createUser = (data) => {
     return request.post({
         url: '/admin/sys_user/create',
         data
@@ -35,7 +32,7 @@ export const createUser = (data: any) => {
  * @param data 
  * @returns 
  */
-export const updateUser = (data: any) => {
+export const updateUser = (data) => {
     return request.post({
         url: '/admin/sys_user/update',
         data
@@ -49,7 +46,7 @@ export const updateUser = (data: any) => {
  * @param userId 
  * @returns 
  */
-export const deleteUserById = (userId: number) => {
+export const deleteUserById = (userId) => {
     return request.post({
         url: '/admin/sys_user/delete',
         data: {
@@ -65,7 +62,7 @@ export const deleteUserById = (userId: number) => {
  * @param userId 
  * @returns 
  */
-export const getUserById = (userId: number) => {
+export const getUserById = (userId) => {
     return request.get({
         url: '/admin/sys_user/get',
         data: {

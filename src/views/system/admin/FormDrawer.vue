@@ -33,21 +33,13 @@
     </el-drawer>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { useStatusTypeDict } from '@/enums/dictEnums';
 
 const statusType = useStatusTypeDict()
 
 
-const formData = ref<{
-    user_id?: number | null
-    account: string
-    nickname: string
-    password: string
-    dept_id: number
-    role_id: number
-    status: string
-}>({
+const formData = ref({
     account: '',
     nickname: '',
     password: '',
@@ -63,7 +55,7 @@ const isCreate = computed(() => formData.value?.user_id ? false : true)
 // 是否显示抽屉
 const drawerShow = ref(false)
 
-const open = (data?: any) => {
+const open = (data) => {
     if (data) {
         formData.value = data
     } else {

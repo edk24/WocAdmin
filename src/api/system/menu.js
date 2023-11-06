@@ -6,10 +6,7 @@ import request from "@/utils/request"
  * @param data 
  * @returns 
  */
-export const menuLists = (data: {
-    page?: number,
-    limit?: number
-}) => {
+export const menuLists = (data) => {
     return request.get({
         url: '/admin/sys_menu/index',
         data
@@ -22,7 +19,7 @@ export const menuLists = (data: {
  * @param data 
  * @returns 
  */
-export const createMenu = (data: any) => {
+export const createMenu = (data) => {
     return request.post({
         url: '/admin/sys_menu/create',
         data
@@ -34,7 +31,7 @@ export const createMenu = (data: any) => {
  * @param data 
  * @returns 
  */
-export const updateMenu = (data: any) => {
+export const updateMenu = (data) => {
     return request.post({
         url: '/admin/sys_menu/update',
         data
@@ -48,7 +45,7 @@ export const updateMenu = (data: any) => {
  * @param menuId 
  * @returns 
  */
-export const deleteMenuById = (menuId: number) => {
+export const deleteMenuById = (menuId) => {
     return request.post({
         url: '/admin/sys_menu/delete',
         data: {
@@ -64,7 +61,7 @@ export const deleteMenuById = (menuId: number) => {
  * @param menuId 
  * @returns 
  */
-export const getMenuById = (menuId: number) => {
+export const getMenuById = (menuId) => {
     return request.get({
         url: '/admin/sys_menu/get',
         data: {

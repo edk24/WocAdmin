@@ -1,9 +1,9 @@
 const cache = {
     key: 'woc_admin_',
     //设置缓存(expire为缓存时效)
-    set(key: string, value: any, expire?: string) {
+    set(key, value, expire) {
         key = this.getKey(key)
-        let data: any = {
+        let data = {
             expire: expire ? this.time() + expire : '',
             value
         }
@@ -17,7 +17,7 @@ const cache = {
             return null
         }
     },
-    get(key: string) {
+    get(key) {
         key = this.getKey(key)
         try {
             const data = window.localStorage.getItem(key)
@@ -38,11 +38,11 @@ const cache = {
     time() {
         return Math.round(new Date().getTime() / 1000)
     },
-    remove(key: string) {
+    remove(key) {
         key = this.getKey(key)
         window.localStorage.removeItem(key)
     },
-    getKey(key: string) {
+    getKey(key) {
         return this.key + key
     }
 }

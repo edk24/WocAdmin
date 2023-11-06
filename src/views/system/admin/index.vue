@@ -52,7 +52,7 @@
     <UploadImport url="ss" ref="imortRef"></UploadImport>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { Refresh, Edit, Delete } from '@element-plus/icons'
 import UploadImport from '@/components/upload/import/index.vue'
 import { deleteUserById, userLists } from '@/api/system/user'
@@ -63,7 +63,7 @@ const imortRef = ref()
 
 // 字典
 const statusType = useStatusTypeDict()
-const statusFilters = statusType.value.map((item: any) => {
+const statusFilters = statusType.value.map((item) => {
     item.text = item.label
     return item
 })
@@ -71,7 +71,7 @@ const statusFilters = statusType.value.map((item: any) => {
 // 登录用户信息
 const userStore = useUserStore()
 // 是否为当前用户
-const isMe = (userId: number) => userId == userStore.userInfo.user_id
+const isMe = (userId) => userId == userStore.userInfo.user_id
 
 // 用户列表
 const userList = ref([])
@@ -81,10 +81,10 @@ const total = ref(0)
 const params = ref({
 })
 
-const handleSizeChange = (value: number) => {
+const handleSizeChange = (value) => {
     fetchList()
 }
-const handleCurrentChange = (value: number) => {
+const handleCurrentChange = (value) => {
     fetchList()
 }
 // 抓取数据
@@ -94,12 +94,12 @@ const fetchList = () => {
         limit: pageSize.value
     })
     userLists(args)
-        .then((data: any) => {
+        .then((data) => {
             total.value = data.total
             userList.value = data.rows
         })
 }
-const handleFilterChange = (filter: any) => {
+const handleFilterChange = (filter) => {
     params.value = Object.assign(params.value, filter)
     currentPage.value = 1
     fetchList()
@@ -111,11 +111,11 @@ onMounted(() => {
 
 
 // 其他操作
-const handleDelete = (row: any) => {
+const handleDelete = (row) => {
     deleteUserById(row.user_id)
-        .then((data: any) => {
+        .then((data) => {
             console.log(data)
-            userList.value = userList.value.filter((item: any) => item.user_id != row.user_id)
+            userList.value = userList.value.filter((item) => item.user_id != row.user_id)
         })
 }
 
